@@ -1,0 +1,8 @@
+Section 1: Getting Started
+    5. MAC: Installing and Getting Started Using Anaconda and course Materials
+        - Installed Anaconda 3.7 for MacOS. Used default settings for pretty much everything.
+        - Went to fresh command line, and used anaconda to install tensorflow (make deep neural networks) and pydotplus (visualize decision trees)
+            + 'conda install [package name]'
+        - Downloaded zip file for course from sundog-learning.com/machine-learning.
+            + This contains jupiter notebook files, interactive ways to expiriment with Python code. You can launch and simulate files, and edit code right in your browser.
+            + Running 'jupyter notebook' allows you to launch a local listing of all the files in your browser.
