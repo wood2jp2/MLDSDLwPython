@@ -6,3 +6,23 @@ Section 1: Getting Started
         - Downloaded zip file for course from sundog-learning.com/machine-learning.
             + This contains jupiter notebook files, interactive ways to expiriment with Python code. You can launch and simulate files, and edit code right in your browser.
             + Running 'jupyter notebook' allows you to launch a local listing of all the files in your browser.
+        
+    10. Intro to Pandas: library of functions, processes tabular data (rows, columns)
+        - Sci-kit Learn:  library for machine learning algos, linear regressions, SVM..?
+        - SK Learn usually takes data formatted by NumPy
+        - Pandas to load in/manipulate data, translate to NumPy array that gets fed into SKLearn
+            + This will result in a 'dataframe'.
+            + data frames have methods like:
+                1. df.head(): shows you the first given number of rows
+                2. df.tail(): shows you the last given number of columns
+                3. df.shape: returns tuple of (rows, columns)
+                4. df.size: number of columns (rows x columns)
+                5. len(df): rows length
+                6. df.columns: returns array of column names
+                7. df.sort_values(['Column to sort by'])
+                8. df['Column Name'].value_counts(): returns number of occurences for each unique value
+            + extract values by column using df['Column Name'] or multiple columns with df[['Column One', 'Column Two']]
+
+Section 2: Statistics and Probability Refresher, and Python Practise
+    12. Types of Data
+        - 
