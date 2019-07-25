@@ -4,7 +4,7 @@ Section 1: Getting Started
         - Went to fresh command line, and used anaconda to install tensorflow (make deep neural networks) and pydotplus (visualize decision trees)
             + 'conda install [package name]'
         - Downloaded zip file for course from sundog-learning.com/machine-learning.
-            + This contains jupiter notebook files, interactive ways to expiriment with Python code. You can launch and simulate files, and edit code right in your browser.
+            + This contains jupiter notebook files, interactive ways to experiment with Python code. You can launch and simulate files, and edit code right in your browser.
             + Running 'jupyter notebook' allows you to launch a local listing of all the files in your browser.
         
     10. Intro to Pandas: library of functions, processes tabular data (rows, columns)
@@ -25,4 +25,38 @@ Section 1: Getting Started
 
 Section 2: Statistics and Probability Refresher, and Python Practise
     12. Types of Data
-        - 
+        - Numerical: quantifiable thing you can measure (stock prices, heights of people)
+            1) Discrete: integer-based. counts of an event (how many times times did I flip heads?)
+            2) Continuous: infinite number of possible values (how much rain fell in a given day, how long did it take to log out of website)
+        - Categorical: qualitative. (gender, race, political party). No quantifiable values. You can assign numbers, but there's no real mathematical meaning to them.
+        - Ordinal: Mix of Numerical and Categorical, essentially Categorical data that has mathematical meaning.
+            + Think of a 5-star rating system for movies.
+
+    13. Mean, Median, Mode
+        - Mean: average of data set. total / number of values
+            [1, 2, 3, 4] = mean is 2.5
+        - Median: sort value and take physical middle of the bunch.
+            + Median of [1, 2, 3, 4, 5] is 3
+            + If you have an even number of numbers, then you take the average of the two middle numbers:
+                 [1, 2, 22, 39] = median is 22+2/2 = 12.
+            + Median is useful in data distributions because outliers do not affect the number. If you're taking average household income, the handful of billionaires do not skew this number.
+        - Mode: most common number in data set.
+            [0, 0, 2, 2, 3, 4, 5, 5, 5, 6, 6] = mode is 5
+    
+    14. ACTIVITY: Using mean, median, and mode in Python
+        + numpy.random.normal(a, b, c): creates distribution of data centered around 'a', with a standard deviation of 'b', for 'c' amount of points
+        + numpy.append(dataset, arraOrListOfValues): adds values to dataset.
+        + numpy.mean(dataset)
+        + numpy.median(dataset)
+        + In this activity, we first created a random data set centered around a value of $27,000 for household incomes, with a standard deviation of $15,000 and with 10,000 points of data. 
+            - Calculating the mean and median results in values around $27,000.
+        + Then we appended a fictitious Jeff Bezos, who made $1,000,000,000 last year. 
+            - Calculating the new mean results in a huge skew, but the median stays approximately the same.
+
+        + Moving onto mode: 
+            - Using SciPy package, we calculated 500 random people's ages between 18-90 
+            - from scipy import stats
+            - stats.mode(dataset)
+    
+    15. ACTIVITY: Variation and Standard deviation
+        + 
