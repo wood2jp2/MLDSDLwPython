@@ -74,3 +74,37 @@ Section 2: Statistics and Probability Refresher, and Python Practise
     16. Probability Density Function; Probability Mass Function
         + Probability Density Function: a 'normal distribution' is an example of this. Speaks to the probability of a data point falling within a given range of values.
         + Probability Mass Function: this is for when you're dealing with discrete data, where a data point has only a limited amount of values it can be.
+
+    17. Common Data distributions
+        + Uniform distribution: There's a flat constant probability of a value happening within a given range.
+            - numpy.random.uniform(a, b, c): a is min, b is max, c is amount of values
+        + Normal Gaussian: looks essentially like a bell curve, the data normalizes around a central value that is most likely of occurring and probability decreases as the values stray away in either direction of that center.
+            from scipy.stats import norm
+            import matplotlib.pyplot as plt
+
+            x = numpy.arange(min, max, step)
+            plt.plot(x, norm.pdf(x))
+        + Exponential PDF (Probability Density Function) / "Power Law": exponentially decreases after a certain value. Steep slope down
+            from scipy.stats import expon
+
+            x = numpy.arange(min, max, step)
+            plt.plot(x, expon.pdf(x))
+        + Binomial Probability Mass Function
+            from scipy.stats import binom
+
+            n, p= 10, 0.5
+            x = numpy.arange(min, max, step)
+            plt.plot(x, binom.pmf(x, n, p))
+        + Poisson Probability Mass Function: if you have info on average number of occurences of an event, this can help you predict the probability of another value happening at any one occurence.
+            from scipy.stats import poisson
+
+            mu = 500 // average
+            x = numpy.arange(min, max, spacingOrStep)
+            plt.plot(x, poisson.pmf(x, mu))
+
+        NOTE: Remember, probability density function is used when we are working with Continuous data, while a probability mass function is used with discrete data.
+    
+    18.[ACTIVITY] Percentiles and Moments
+        + Percentiles: In a data set, what's the point at which X% of the values are less than that value?
+            - example: income distribution.
+            numpy.percentiles(listOfValues, percentile)
