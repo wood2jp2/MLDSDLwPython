@@ -44,7 +44,7 @@ Section 2: Statistics and Probability Refresher, and Python Practise
             [0, 0, 2, 2, 3, 4, 5, 5, 5, 6, 6] = mode is 5
     
     14. ACTIVITY: Using mean, median, and mode in Python
-        + numpy.random.normal(a, b, c): creates distribution of data centered around 'a', with a standard deviation of 'b', for 'c' amount of points
+        + numpy.random.normal(a, b, c): creates distribution of data centered around 'a', with a standard deviation of 'b', for 'c' amount of points. This is a glorified list of data.
         + numpy.append(dataset, arraOrListOfValues): adds values to dataset.
         + numpy.mean(dataset)
         + numpy.median(dataset)
@@ -59,4 +59,18 @@ Section 2: Statistics and Probability Refresher, and Python Practise
             - stats.mode(dataset)
     
     15. ACTIVITY: Variation and Standard deviation
-        + 
+        + Standard Deviation: sigma. square root of variance. used as a way to identify outliers. Data points that lie greater than one standard deviation from the mean are considered 'unusual'. Extreme data is given with the amount of sigmas / std deviations from the mean it is.
+        + Variance: how spread out is your data. It's the average of the squared differences from the mean.
+            + Population vs. Sample
+                - If you have a complete set of data (population), you divide the squared variances by the complete number of N.
+                - If you have only a sample of the data, you divide the squared variances by the complete number of N-1.
+
+        + Remember, we are using matplotlib.pyplot to visualize the data seen. 
+            - plot.hist(a, b): a is the list of data, b is the number of 'buckets' you want visualized.
+            There are also plenty of kwargs documented here: https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.hist.html
+            - data.std(): returns standard deviation
+            - data.var(): returns variance, or std deviation squared.
+    
+    16. Probability Density Function; Probability Mass Function
+        + Probability Density Function: a 'normal distribution' is an example of this. Speaks to the probability of a data point falling within a given range of values.
+        + Probability Mass Function: this is for when you're dealing with discrete data, where a data point has only a limited amount of values it can be.
