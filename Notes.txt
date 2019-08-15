@@ -108,3 +108,88 @@ Section 2: Statistics and Probability Refresher, and Python Practise
         + Percentiles: In a data set, what's the point at which X% of the values are less than that value?
             - example: income distribution.
             numpy.percentiles(listOfValues, percentile)
+        + Moments: quantitive measures of the shape of a probability density function. 
+            - The first moment is the mean.
+            - The second moment is the variance.
+            - The third moment is 'skew': this is a measure of how lopsided the data distribution is. 
+                + A skew with a longer tail on the left is a negative skew, on the right is a positive skew.
+            - The fourth moment is 'kurtosis': how thick is the tail and how sharp is the peak?
+        
+        Calculating Skew and kurtosis:
+            import scipy.stats as sp
+            sp.skew(vals)
+            sp.kurtosis(vals)
+
+        If you change the number around which your dataset is centered, rather than 0, it shouldn't much change skew, kurtosis, etc because these are measures of the shape of your data, not the specific values.
+    
+    19. [ACTIVITY] A Crash Course in matplotlib
+        from scipy.stats import norm
+        import matplotlib.pyplot as plt // plt just resembles your 'graph'
+        import numpy as np
+
+        - You can then do a couple of things. Drawing a line graph: 
+
+        x = np.arange([low], [high], [increments]) // creats a list of values in order of least to greatest using that increment.
+        plt.plot(x, norm.pdf(x)) 
+        plt.show()
+
+        - You can show multiple plots on the same graph
+        x = np.arange(-3, 3, 0.01)
+        plt.plot(x, norm.pdf(x))  // norm.pdf just creates a list of numbers resembling a probability density function (concentrated at the middle)
+        plt.plot(x, norm.pdf(x, mean, standardDeviation))
+        plt.show()
+
+        - You can save it to a file
+        plt.savefig('/Users/JWood/Documents/Coding/Udemy/MLDSDL with Python/MyPlot.png', format='png')
+
+        - You can adjust the axes or add a grid (verticle / horizontal lines)
+        axes = plt.axes()
+        axes.set_xlim([min, max])
+        axes.set_ylim([min, max])
+        axes.set_xticks([list of each value you want a tick to be on])
+        axes.set_yticks([list of each value you want a tick to be on])
+        axes.grid()
+
+        - Change line types and colors (goes into third arg of plt.plot() as string)
+        plt.plot(x, norm.pdf(x), 'b-') => blue solid line
+            + Other options: 'r:' => red dotted
+            + 'r--' => red dashed
+        
+        - Label Axes and Legends
+        
+        axes.xlabel('Label 1')
+        axes.ylabel('label 2')
+        plt.legend(['Label 1', 'label 2'], loc=4) // location four, bottom right
+
+        - Pie charts
+        values = [arrayOfValues]
+        colors = ['r', 'b', 'g', 'c', 'm'] // red, blue, green, cyan, magenta
+        explode = [0, 0, 0.2, 0, 0] // gives a value of explosion (separation) to your list if desired. In this case, the green slice will be exploded
+        labels = [arrayOfLabels]
+        plt.pie(values, colors=colors, explode=explode, labels = labels)
+        plt.title('Title')
+        plt.show()
+
+        - Bar charts (similar to pie)
+        values = [1, 2, 3, 3, 4]
+        colors = ['r', 'b', 'g', 'c', 'm']
+        plt.bar(range(0,5), values, color=colors)
+        plt.show()
+
+        - Scatter plot
+        X = randn(500)
+        Y = randn(500)
+        plt.scatter(X, Y)
+        plt.show()
+
+        - Histogram
+        incomes = np.random.normal(mean, stdDev, numPoints)
+        plt.hist(incomes, bucketsNumber)
+        plt.show()
+
+        - Box and Whisker Plot
+            + Box is inner 50%.
+            + Outliers are considered Box size * 1.5 outside of that
+
+    19. [activity] Advanced Visualization with Seaborn
+        - 
